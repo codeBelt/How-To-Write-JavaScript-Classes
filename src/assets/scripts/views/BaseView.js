@@ -17,11 +17,11 @@ define(function (require, exports, module) { // jshint ignore:line
                 .layoutChildren();
         };
 
-        BaseView.prototype.setupHandlers = function() {
+        BaseView.prototype.createChildren = function() {
             return this;
         };
 
-        BaseView.prototype.createChildren = function() {
+        BaseView.prototype.setupHandlers = function() {
             return this;
         };
 
@@ -34,7 +34,6 @@ define(function (require, exports, module) { // jshint ignore:line
                 return this;
             }
             this.isEnabled = true;
-
             return this;
         };
 

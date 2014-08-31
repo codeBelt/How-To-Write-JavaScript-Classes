@@ -4,6 +4,13 @@ define(function (require, exports, module) { // jshint ignore:line
     // Imports
     var Extend = require('utils/Extend');
     var BaseView = require('views/BaseView');
+    var TopNavComponent = require('components/TopNavComponent');
+    var SuperHeroView = require('views/home/SuperHeroView');
+
+    var SELECTOR = {
+        NAV: '.js-topNav',
+        HERO: '.js-hero'
+    }
 
     /**
      * YUIDoc_comment
@@ -18,18 +25,25 @@ define(function (require, exports, module) { // jshint ignore:line
 
         function DemoView($element) {
             _super.call(this, $element);
+
+            /**
+             * YUIDoc_comment
+             *
+             * @property _topNav
+             * @type {TopNavComponent}
+             * @private
+             */
+            this._topNav = null;
+
+            /**
+             * YUIDoc_comment
+             *
+             * @property _heroView
+             * @type {SuperHeroView}
+             * @private
+             */
+            this._heroView = null;
         }
-
-        /**
-         * @overridden BaseView.createChildren
-         */
-        DemoView.prototype.setupHandlers = function () {
-            _super.prototype.setupHandlers.call(this);
-
-            // Setup your class event handlers.
-
-            return this;
-        };
 
         /**
          * @overridden BaseView.createChildren
@@ -37,7 +51,19 @@ define(function (require, exports, module) { // jshint ignore:line
         DemoView.prototype.createChildren = function () {
             _super.prototype.createChildren.call(this);
 
-            // Create and add your child objects to this parent class.
+            this._topNav = new TopNavComponent(this.$element.find(SELECTOR.NAV));
+            this._heroView = new SuperHeroView(this.$element.find(SELECTOR.HERO));
+
+            return this;
+        };
+
+        /**
+         * @overridden BaseView.setupHandlers
+         */
+        DemoView.prototype.setupHandlers = function () {
+            _super.prototype.setupHandlers.call(this);
+
+            // Setup your class event handlers.
 
             return this;
         };
