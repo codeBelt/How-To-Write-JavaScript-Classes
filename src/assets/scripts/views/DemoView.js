@@ -81,7 +81,9 @@ define(function (require, exports, module) { // jshint ignore:line
          * @overridden BaseView.enable
          */
         DemoView.prototype.enable = function () {
-            if (this.isEnabled === true) return this;
+            if (this.isEnabled === true) {
+                return this;
+            }
 
             // Enable any child objects and add any event listeners.
 
@@ -92,7 +94,9 @@ define(function (require, exports, module) { // jshint ignore:line
          * @overridden BaseView.disable
          */
         DemoView.prototype.disable = function () {
-            if (this.isEnabled === false) return this;
+            if (this.isEnabled === false) {
+                return this;
+            }
 
             // Disable any child objects and remove any event listeners.
 

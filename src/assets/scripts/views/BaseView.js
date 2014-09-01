@@ -30,7 +30,7 @@ define(function (require, exports, module) { // jshint ignore:line
         };
 
         BaseView.prototype.enable = function() {
-            if (this.isEnabled) {
+            if (this.isEnabled === true) {
                 return this;
             }
             this.isEnabled = true;
@@ -38,7 +38,7 @@ define(function (require, exports, module) { // jshint ignore:line
         };
 
         BaseView.prototype.disable = function() {
-            if (!this.isEnabled) {
+            if (!this.isEnabled === false) {
                 return this;
             }
             this.isEnabled = false;
