@@ -1,0 +1,105 @@
+<snippet>
+    <content><![CDATA[
+define(function(require, exports, module) { // jshint ignore:line
+    'use strict';
+
+    // Imports
+    var Extend = require('utils/Extend');
+    var DOMElement = require('views/BaseView');
+
+    /**
+     * YUIDoc_comment
+     *
+     * @class ${TM_FILENAME/(.*)[.](.*)/$1/g}
+     * @extends BaseView
+     * @constructor
+     **/
+    var ${TM_FILENAME/(.*)[.](.*)/$1/g} = (function () {
+
+        var _super = Extend(${TM_FILENAME/(.*)[.](.*)/$1/g}, BaseView);
+
+        function ${TM_FILENAME/(.*)[.](.*)/$1/g}($element) {
+            // Put any properties above super.
+            _super.call(this, $element);
+            // Put any method calls below super.$2
+        }
+
+        /**
+         * @overridden BaseView.createChildren
+         */
+        ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.createChildren = function () {
+          _super.prototype.createChildren.call(this);
+
+            // Create and add your child objects to this parent class.
+
+            return this;
+        };
+
+        /**
+         * @overridden BaseView.setupHandlers
+         */
+        ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.setupHandlers = function () {
+            _super.prototype.setupHandlers.call(this);
+
+            // Setup your class event handlers.
+
+            return this;
+        };
+
+        /**
+         * @overridden BaseView.layoutChildren
+         */
+        ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.layoutChildren = function () {
+            // Layout or update any child objects if needed.
+
+            return this;
+        };
+
+        /**
+         * @overridden BaseView.enable
+         */
+        ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.enable = function () {
+              if (this.isEnabled === true) {
+                  return this;
+              }
+
+              // Enable any child objects and add any event listeners.
+
+              return _super.prototype.enable.call(this);
+          };
+
+        /**
+         * @overridden BaseView.disable
+         */
+        ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.disable = function () {
+            if (this.isEnabled === false) {
+                    return this;
+                }
+
+                // Disable any child objects and remove any event listeners.
+
+                return _super.prototype.disable.call(this);
+            };
+
+        /**
+         * @overridden BaseView.destroy
+         */
+        ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.destroy = function () {
+            // Call destroy on any child objects that is need.
+            // This super method will also null out all properties automatically to prevent memory leaks.
+
+            _super.prototype.destroy.call(this);
+        };
+
+        return ${TM_FILENAME/(.*)[.](.*)/$1/g};
+    })();
+
+    module.exports = ${TM_FILENAME/(.*)[.](.*)/$1/g};
+
+});
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>view</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.js</scope>
+</snippet>
