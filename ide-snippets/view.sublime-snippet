@@ -28,7 +28,7 @@ define(function(require, exports, module) { // jshint ignore:line
          * @overridden BaseView.createChildren
          */
         ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.createChildren = function () {
-          _super.prototype.createChildren.call(this);
+            _super.prototype.createChildren.call(this);
 
             // Create and add your child objects to this parent class.
 
@@ -59,27 +59,27 @@ define(function(require, exports, module) { // jshint ignore:line
          * @overridden BaseView.enable
          */
         ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.enable = function () {
-              if (this.isEnabled === true) {
-                  return this;
-              }
+            if (this.isEnabled === true) {
+                return this;
+            }
 
-              // Enable any child objects and add any event listeners.
+            // Enable any child objects and add any event listeners.
 
-              return _super.prototype.enable.call(this);
-          };
+            return _super.prototype.enable.call(this);
+        };
 
         /**
          * @overridden BaseView.disable
          */
         ${TM_FILENAME/(.*)[.](.*)/$1/g}.prototype.disable = function () {
             if (this.isEnabled === false) {
-                    return this;
-                }
+                return this;
+            }
 
-                // Disable any child objects and remove any event listeners.
+            // Disable any child objects and remove any event listeners.
 
-                return _super.prototype.disable.call(this);
-            };
+            return _super.prototype.disable.call(this);
+        };
 
         /**
          * @overridden BaseView.destroy
