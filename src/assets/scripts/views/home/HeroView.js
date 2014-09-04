@@ -65,7 +65,7 @@ define(function (require, exports, module) { // jshint ignore:line
         HeroView.prototype.setupHandlers = function () {
             _super.prototype.setupHandlers.call(this);
 
-            this.onClickHandler = this.onClick.bind(this);
+            this.onClickHandler = this._onClick.bind(this);
 
             return this;
         };
@@ -114,11 +114,11 @@ define(function (require, exports, module) { // jshint ignore:line
         /**
          * YUIDoc_comment
          *
-         * @method onClick
+         * @method _onClick
          * @param event {jQueryEventObject}
-         * @private
+         * @protected
          */
-        HeroView.prototype.onClick = function(event) {
+        HeroView.prototype._onClick = function(event) {
             this.descriptionText = 'Robert is Cool!';
 
             this.layoutChildren();

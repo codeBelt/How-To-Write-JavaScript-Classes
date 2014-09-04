@@ -27,10 +27,10 @@ define(function (require, exports, module) { // jshint ignore:line
          * another class. All this class has to do is focus on it's own functionality. Everything else happens
          * behind the scenes in the HeroView class.
          *
-         * @overridden HeroView.onClick
+         * @overridden HeroView._onClick
          */
-        SuperHeroView.prototype.onClick = function(event) {
-            _super.prototype.onClick.call(this, event);
+        SuperHeroView.prototype._onClick = function(event) {
+            _super.prototype._onClick.call(this, event);
 
             alert('I am SuperHeroView and I extend HeroView to inherit it\'s functionality.')
         };

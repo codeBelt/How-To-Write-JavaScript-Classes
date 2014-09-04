@@ -4,18 +4,19 @@ define(function (require, exports, module) { // jshint ignore:line
     var BaseView = (function () {
 
         function BaseView($element) {
+            if (($element instanceof jQuery) === true && $element.length === 0) {
+                // If a jQuery object was passed in and it doesn't have any items then stop.
+                return;
+            }
+
             this.$element = $element;
             this.isEnabled = false;
 
-            this.init();
-        };
-
-        BaseView.prototype.init = function() {
             this.createChildren()
                 .setupHandlers()
                 .enable()
                 .layoutChildren();
-        };
+        }
 
         BaseView.prototype.createChildren = function() {
             return this;

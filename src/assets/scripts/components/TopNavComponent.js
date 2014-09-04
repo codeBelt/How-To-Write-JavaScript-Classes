@@ -50,7 +50,7 @@ define(function (require, exports, module) { // jshint ignore:line
         TopNavComponent.prototype.setupHandlers = function () {
             _super.prototype.setupHandlers.call(this);
 
-            this.onClickHandler = this.onClick.bind(this);
+            this.onClickHandler = this._onClick.bind(this);
 
             return this;
         };
@@ -97,11 +97,11 @@ define(function (require, exports, module) { // jshint ignore:line
         /**
          * YUIDoc_comment
          *
-         * @method onClick
+         * @method _onClick
          * @param event {jQueryEventObject}
-         * @private
+         * @protected
          */
-        TopNavComponent.prototype.onClick = function(event) {
+        TopNavComponent.prototype._onClick = function(event) {
             event.preventDefault();
 
             var $currentTarget = $(event.currentTarget);
