@@ -27,8 +27,6 @@ define(function (require, exports, module) { // jshint ignore:line
             _super.call(this, $element);
 
             /**
-             * YUIDoc_comment
-             *
              * @property _topNav
              * @type {TopNavComponent}
              * @private
@@ -36,8 +34,6 @@ define(function (require, exports, module) { // jshint ignore:line
             this._topNav = null;
 
             /**
-             * YUIDoc_comment
-             *
              * @property _heroView
              * @type {SuperHeroView}
              * @private

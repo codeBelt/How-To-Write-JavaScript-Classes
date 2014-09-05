@@ -18,8 +18,6 @@ define(function (require, exports, module) { // jshint ignore:line
 
         function HeroView($element) {
             /**
-             * YUIDoc_comment
-             *
              * @property _$description
              * @type {jQuery}
              * @private
@@ -27,8 +25,6 @@ define(function (require, exports, module) { // jshint ignore:line
             this._$description = null;
 
             /**
-             * YUIDoc_comment
-             *
              * @property _$button
              * @type {jQuery}
              * @private
@@ -36,13 +32,11 @@ define(function (require, exports, module) { // jshint ignore:line
             this._$button = null;
 
             /**
-             * YUIDoc_comment
-             *
              * @property descriptionText
              * @type {string}
              * @public
              */
-            this.descriptionText = 'Mr. proto is not here and he is not welcome here.';
+            this.descriptionText = 'Do you know Robert?';
 
             _super.call(this, $element);
         }
@@ -119,7 +113,7 @@ define(function (require, exports, module) { // jshint ignore:line
          * @protected
          */
         HeroView.prototype._onClick = function(event) {
-            this.descriptionText = 'Robert is Cool!';
+            this.descriptionText = 'Yah, Robert is Cool!';
 
             this.layoutChildren();
         };
